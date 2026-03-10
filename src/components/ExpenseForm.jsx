@@ -14,7 +14,7 @@ e.preventDefault();
 if(!title || !amount){
 
 Notiflix.Notify.failure(
-"Expense Name dan Amount wajib diisi"
+"Pencatatan wajib diisi"
 );
 
 return;
@@ -29,7 +29,7 @@ category,
 date:new Date().toISOString()
 });
 
-Notiflix.Notify.success("Expense berhasil ditambahkan");
+Notiflix.Notify.success("Data berhasil ditambahkan");
 
 setTitle("");
 setAmount("");
@@ -61,9 +61,9 @@ value={category}
 onChange={(e)=>setCategory(e.target.value)}
 >
 
-<option>Food</option>
+<option>Makanan</option>
 <option>Transport</option>
-<option>Shopping</option>
+<option>Belanja</option>
 <option>Bills</option>
 
 </select>
@@ -74,7 +74,7 @@ className="bg-slate-800 hover:bg-slate-700 text-white
 dark:bg-slate-200 dark:text-black dark:hover:bg-slate-300
 w-full py-2 rounded disabled:opacity-50"
 >
-Add Expense
+Simpan catatan
 </button>
 
 </form>

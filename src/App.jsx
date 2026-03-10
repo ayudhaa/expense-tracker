@@ -39,7 +39,7 @@ setExpenses([exp,...expenses]);
 
 const deleteExpense=(id)=>{
      Notiflix.Confirm.show(
-        'Hapus Expense',
+        'Hapus Catatan',
         'Apakah kamu yakin ingin menghapus data ini?',
         'Ya, Hapus',
         'Batal',

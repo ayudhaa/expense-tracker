@@ -11,21 +11,21 @@ return(
 onClick={()=>setFilter("all")}
 className={`px-3 py-1 rounded ${filter==="all" ? active : normal}`}
 >
-All
+Semua
 </button>
 
 <button
 onClick={()=>setFilter("today")}
 className={`px-3 py-1 rounded ${filter==="today" ? active : normal}`}
 >
-Today
+/Hari
 </button>
 
 <button
 onClick={()=>setFilter("month")}
 className={`px-3 py-1 rounded ${filter==="month" ? active : normal}`}
 >
-Month
+/Bulan
 </button>
 
 </div>

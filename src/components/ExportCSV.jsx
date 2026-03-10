@@ -31,7 +31,7 @@ minute:"2-digit"
 .replace(/\//g,"-")
 .replace(/:/g,"-");
 
-return `${formatted}_Expense.csv`;
+return `${formatted}_Catatan_Pengeluaran.csv`;
 
 };
 
