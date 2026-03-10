@@ -42,7 +42,7 @@ return(
 
 <input
 className="border p-2 rounded w-full bg-white dark:bg-gray-700"
-placeholder="Expense name"
+placeholder="Nama"
 value={title}
 onChange={(e)=>setTitle(e.target.value)}
 />
@@ -50,7 +50,7 @@ onChange={(e)=>setTitle(e.target.value)}
 <input
 type="number"
 className="border p-2 rounded w-full bg-white dark:bg-gray-700"
-placeholder="Amount"
+placeholder="Harga"
 value={amount}
 onChange={(e)=>setAmount(e.target.value)}
 />

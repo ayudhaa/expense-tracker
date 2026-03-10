@@ -73,7 +73,7 @@ return(
 <div className="flex justify-between mb-4">
 
 <h1 className="text-xl font-bold">
-Smart Expense
+Kelola Pengeluaran
 </h1>
 
 <button
