@@ -3,16 +3,18 @@ import Notiflix from "notiflix";
 
 function ExportCSV({expenses}){
 
-const formatDate=(date)=>{
+const formatDate = (date) => {
 
-return new Date(date).toLocaleString("id-ID",{
-timeZone:"Asia/Jakarta",
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-hour:"2-digit",
-minute:"2-digit"
-});
+const d = new Date(date);
+
+const day = String(d.getDate()).padStart(2,"0");
+const month = String(d.getMonth()+1).padStart(2,"0");
+const year = d.getFullYear();
+
+const hour = String(d.getHours()).padStart(2,"0");
+const minute = String(d.getMinutes()).padStart(2,"0");
+
+return `${day}-${month}-${year} ${hour}:${minute}`;
 
 };
 
@@ -47,7 +49,7 @@ return;
 
 }
 
-const header="Title,Amount,Category,Date\n";
+const header="Nama pengeluaran,Harga,Kategori,Tanggal dan jam\n";
 
 const rows = expenses.map(e =>
 `${e.title},${e.amount},${e.category},${formatDate(e.date)}`
@@ -63,7 +65,7 @@ type:"text/csv;charset=utf-8;"
 
 saveAs(blob,getFileName());
 
-Notiflix.Notify.success("CSV berhasil di export");
+Notiflix.Notify.success("Laporan berhasil di export");
 
 };
 
@@ -75,7 +77,7 @@ className="bg-slate-800 hover:bg-slate-700 text-white
 dark:bg-slate-200 dark:text-black dark:hover:bg-slate-300
 w-full py-2 rounded"
 >
-Export CSV
+Export
 </button>
 
 )
