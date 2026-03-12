@@ -18,6 +18,10 @@ return `${day}-${month}-${year} ${hour}:${minute}`;
 
 };
 
+const formatRupiah = (number) => {
+return `Rp. ${number.toLocaleString("id-ID")}`;
+};
+
 const getFileName=()=>{
 
 const now = new Date();
@@ -52,12 +56,12 @@ return;
 const header="Nama pengeluaran,Harga,Kategori,Tanggal dan jam\n";
 
 const rows = expenses.map(e =>
-`${e.title},${e.amount},${e.category},${formatDate(e.date)}`
+`${e.title},${formatRupiah(e.amount)},${e.category},${formatDate(e.date)}`
 ).join("\n");
 
 const total = expenses.reduce((sum,e)=>sum + e.amount,0);
 
-const totalRow = `\n\nTOTAL,${total},,\n`;
+const totalRow = `\n\nTOTAL,${formatRupiah(total)},,\n`;
 
 const blob = new Blob([header + rows + totalRow],{
 type:"text/csv;charset=utf-8;"
