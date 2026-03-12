@@ -5,7 +5,7 @@ function ExpenseForm({addExpense}){
 
 const [title,setTitle] = useState("");
 const [amount,setAmount] = useState("");
-const [category,setCategory] = useState("Food");
+const [category,setCategory] = useState("MakananMinuman");
 
 const submit=(e)=>{
 
@@ -61,7 +61,7 @@ value={category}
 onChange={(e)=>setCategory(e.target.value)}
 >
 
-<option>Makanan</option>
+<option>Makanan/ Minuman</option>
 <option>Transport</option>
 <option>Belanja</option>
 <option>Bills</option>
