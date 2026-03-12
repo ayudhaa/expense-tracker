@@ -42,7 +42,7 @@ return(
 
 <input
 className="border p-2 rounded w-full bg-white dark:bg-gray-700"
-placeholder="Nama"
+placeholder="Nama pengeluaran"
 value={title}
 onChange={(e)=>setTitle(e.target.value)}
 />
