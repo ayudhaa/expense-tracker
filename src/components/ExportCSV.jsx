@@ -49,11 +49,15 @@ return;
 
 const header="Title,Amount,Category,Date\n";
 
-const rows = expenses.map(e=>
+const rows = expenses.map(e =>
 `${e.title},${e.amount},${e.category},${formatDate(e.date)}`
 ).join("\n");
 
-const blob = new Blob([header+rows],{
+const total = expenses.reduce((sum,e)=>sum + e.amount,0);
+
+const totalRow = `\n\nTOTAL,${total},,\n`;
+
+const blob = new Blob([header + rows + totalRow],{
 type:"text/csv;charset=utf-8;"
 });
 
